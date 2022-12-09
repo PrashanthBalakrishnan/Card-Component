@@ -1,0 +1,88 @@
+@use '../util/' as u;
+.card {
+  margin: 6%;
+  border-radius: u.rem(10);
+  overflow: hidden;
+  @include u.breakpoints(large) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: u.rem(545);
+  }
+  &__image {
+    background-image: url(/images/image-product-mobile.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: u.rem(240);
+    @include u.breakpoints(large) {
+      background-image: url(/images/image-product-desktop.jpg);
+      height: 100%;
+    }
+  }
+  &__text {
+    padding: u.rem(25);
+    background-color: var(--neutral--white);
+  }
+  &__subtitle {
+    margin-bottom: u.rem(18);
+    font-family: u.$primaryFont;
+    letter-spacing: u.rem(5);
+    font-size: u.rem(12);
+  }
+  &__title {
+    font-size: u.rem(30);
+    line-height: 0.94;
+    font-family: u.$boldFont;
+    color: var(--neutral-very-dark-blue);
+    margin-bottom: u.rem(26);
+  }
+  &__description {
+    margin-bottom: u.rem(30);
+    line-height: 1.9;
+    font-size: u.rem(16);
+
+    @include u.breakpoints(large) {
+      font-size: u.rem(13);
+    }
+  }
+  &__price {
+    margin-bottom: u.rem(20);
+    display: flex;
+    align-items: center;
+
+    &--new {
+      color: var(--primary-dark-cyan);
+      font-size: u.rem(25);
+      font-family: u.$boldFont;
+      margin-right: u.rem(12);
+    }
+    &--old {
+      font-size: u.rem(10);
+      text-decoration-line: line-through;
+    }
+  }
+
+  &__button {
+    background-color: var(--primary-dark-cyan);
+    padding: u.rem(15);
+    border-radius: u.rem(5);
+    transition: background-color 100ms ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      background-color: #1a4031;
+    }
+    &--link {
+      font-size: u.rem(12);
+      text-decoration: none;
+      color: var(--neutral--white);
+      margin-left: u.rem(5);
+      font-weight: bold;
+    }
+    &--image {
+      width: u.rem(15);
+      height: u.rem(16);
+    }
+  }
+}

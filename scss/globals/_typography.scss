@@ -1,0 +1,5 @@
+@use '../util' as u;
+
+p {
+  font-size: u.rem(14);
+}
